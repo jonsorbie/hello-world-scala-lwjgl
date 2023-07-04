@@ -1,2 +1,9 @@
 # hello-world-scala-lwjgl
-Scala version of LWJGL's HelloWorld
+
+Straightforward conversion of LWJGL's HelloWorld example to scala.  See the original at:
+
+https://www.lwjgl.org/guide
+
+Not very idiomatic, but it should get you off the ground.
+
+See the `build.sbt` file for dependency setup.
