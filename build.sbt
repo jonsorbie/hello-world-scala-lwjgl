@@ -1,6 +1,6 @@
 ThisBuild / version := "0.1.0-SNAPSHOT"
 
-ThisBuild / scalaVersion := "3.3.0"
+ThisBuild / scalaVersion := "3.3.6"
 
 lazy val root = (project in file("."))
   .settings(
@@ -11,8 +11,8 @@ lazy val root = (project in file("."))
 // Change it according to your platform, of course.
 // Use the https://www.lwjgl.org/customize tool to help figure out what you really need.
 
-val lwjglVersion = "3.3.2"
-val lwjglNatives = "natives-macos"
+val lwjglVersion = "3.3.6"
+val lwjglNatives = "natives-macos-arm64"
 
 libraryDependencies ++= Seq(
     "org.lwjgl" % "lwjgl"        % lwjglVersion,
