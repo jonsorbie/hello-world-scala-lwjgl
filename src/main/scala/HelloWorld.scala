@@ -1,15 +1,15 @@
-import org.lwjgl.Version
-import org.lwjgl.glfw.Callbacks.glfwFreeCallbacks
+import org.lwjgl.*
+import org.lwjgl.glfw.Callbacks.*
 import org.lwjgl.glfw.GLFW.*
-import org.lwjgl.glfw.{GLFWErrorCallback, GLFWVidMode}
-import org.lwjgl.opengl.GL
-import org.lwjgl.opengl.GL11.{GL_COLOR_BUFFER_BIT, GL_DEPTH_BUFFER_BIT, glClear, glClearColor}
-import org.lwjgl.system.MemoryStack
-import org.lwjgl.system.MemoryStack.stackPush
-import org.lwjgl.system.MemoryUtil.NULL
+import org.lwjgl.glfw.*
+import org.lwjgl.opengl.*
+import org.lwjgl.opengl.GL11.*
+import org.lwjgl.system.*
+import org.lwjgl.system.MemoryStack.*
+import org.lwjgl.system.MemoryUtil.*
 
-import java.nio.IntBuffer
-import scala.util.Using
+import java.nio.*
+import scala.util.*
 
 /**
  * Hello world example obtained from <a href="https://www.lwjgl.org/guide">LWJGL Guide</a>
@@ -19,7 +19,7 @@ class HelloWorld {
 
     private var window: Long = NULL
 
-    private def run(): Unit = {
+    def run(): Unit = {
         println(s"Hello LWJGL ${Version.getVersion}!")
 
         init()
@@ -29,7 +29,7 @@ class HelloWorld {
         glfwFreeCallbacks(window)
         glfwDestroyWindow(window)
 
-        // Terminate GLFW and free the error callback// Terminate GLFW and free the error callback
+        // Terminate GLFW and free the error callback
         glfwTerminate()
         glfwSetErrorCallback(null).free()
     }
@@ -77,10 +77,10 @@ class HelloWorld {
 
         // Make the OpenGL context current
         glfwMakeContextCurrent(window)
-        // Enable v-sync// Enable v-sync
+        // Enable v-sync
         glfwSwapInterval(1)
 
-        // Make the window visible// Make the window visible
+        // Make the window visible
         glfwShowWindow(window)
     }
 
@@ -92,7 +92,7 @@ class HelloWorld {
         // bindings available for use.
         GL.createCapabilities
 
-        // Set the clear color// Set the clear color
+        // Set the clear color
         glClearColor(1.0f, 0.0f, 0.0f, 0.0f)
 
         // Run the rendering loop until the user has attempted to close
